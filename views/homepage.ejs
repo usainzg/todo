@@ -1,0 +1,31 @@
+<a href="/logout">Logout</a>
+<form action="/todo" method="post">
+
+  <input type="text" name="title">
+  <br><br>
+  <input type="text" name="description">
+  <br><br>
+  <button type="submit">Create</button>
+
+</form>
+
+<hr>
+
+<ul>
+  <% _.each(todos, function(todo){ %>
+    <li style="<% if(!todo.done){ %>color: red;<% } %>"><b><%= todo.title %></b> - <%= todo.description %> </li><small>Author: <%= todo.user.nickname %></small><a href="/detail/<%= todo.id %>">Detail</a>
+    <form action="/todo/completed/<%= todo.id %>" method="post">
+      <button type="submit">Completed</button>
+    </form>
+    <form action="/todo/update/<%= todo.id %>">
+      <input type="text" name="title" value="<%= todo.title %>">
+      <br><br>
+      <input type="text" name="description" value="<%= todo.description %>">
+      <br><br>
+      <button type="submit">Update</button>
+    </form>
+    <form action="/todo/delete/<%= todo.id %>" method="post">
+      <button type="submit">Delete</button>
+    </form>
+  <% }) %>
+</ul>

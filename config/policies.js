@@ -32,7 +32,8 @@ module.exports.policies = {
     '*'        : 'sessionAuth',
     'completed': ['sessionAuth', 'isTodoOwner'],
     'update'   : ['sessionAuth', 'isTodoOwner'],
-    'delete'   : ['sessionAuth', 'isTodoOwner']
+    'delete'   : ['sessionAuth', 'isTodoOwner'],
+    'findOne'  : ['sessionAuth', 'isPrivate']
   },
 
   'UserController':{

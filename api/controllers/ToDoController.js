@@ -8,6 +8,7 @@
 module.exports = {
 	create: function(req, res){
 		var todo = req.params.all();
+		if(req.param('private') === 'on') todo.private = true;
 		todo.user = req.session.user.id;
 		ToDo.create(todo).exec(function(err, todo){
 			if(err) return res.serverError(err);
@@ -28,8 +29,8 @@ module.exports = {
 	},
 	delete:function(req, res){
     ToDo.destroy(req.param('id')).exec(function(err, todo){
-        if(err) return res.serverError();
-        return res.redirect('/');
+      if(err) return res.serverError();
+      return res.redirect('/');
     });
 	},
 	findOne: function(req, res){

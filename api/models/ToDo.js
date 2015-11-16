@@ -25,6 +25,11 @@ module.exports = {
 
       user: {
         model: 'User'
+      },
+
+      private:{
+        type: 'boolean',
+        defaultsTo: false
       }
 
   }

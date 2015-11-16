@@ -9,7 +9,12 @@ module.exports = {
 	index: function(req, res){
 		if(req.session && req.session.authenticated){
 			ToDo
-				.find()
+				.find({
+					or: [
+						{private: false},
+						{user: req.session.user.id}
+					]
+				})
 				.sort('createdAt DESC')
 				.populate('user')
 				.exec(function(err, todos){

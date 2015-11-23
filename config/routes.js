@@ -40,6 +40,7 @@ module.exports.routes = {
   'POST /todo/delete/:id' : 'ToDoController.delete',
   'GET /detail/:id': 'ToDoController.findOne',
   'POST /todo/completed/:id': 'ToDoController.completed',
+  'POST /todo/:id/like'     : 'ToDoController.like',
 
   /* USER */
   'POST /user': 'UserController.create',

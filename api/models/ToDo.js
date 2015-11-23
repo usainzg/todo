@@ -30,6 +30,11 @@ module.exports = {
       private:{
         type: 'boolean',
         defaultsTo: false
+      },
+
+      likes: {
+        collection: 'UserLikes',
+        via: 'todo'
       }
 
   }

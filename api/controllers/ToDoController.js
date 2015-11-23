@@ -38,5 +38,13 @@ module.exports = {
 			if(err) return res.serverError();
 			return res.view('details', {todo: todo});
 		});
+	},
+	like: function(req, res){
+		var todo = req.param('id');
+		var user = req.session.user.id;
+		UserLike.create({user: user, todo: todo}).exec(function(err, like){
+			if(err) return res.serverError(err);
+			return res.redirect('/detail/' + like.todo);
+		});
 	}
 };

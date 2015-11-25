@@ -1,23 +1,32 @@
-<h2>Login</h2>
-<form action="/login" method="post">
 
-  <input type="email" name="email">
-  <br><br>
-  <input type="password" name="password">
-  <br><br>
-  <button type="submit">Login</button>
+<section class="login">
+  <h2>Login</h2>
+  <form action="/login" method="post">
 
-</form>
-<hr>
-<h2>Sing up</h2>
-<form action="/user" method="post">
+    <input type="email" name="email">
+    <br><br>
+    <input type="password" name="password">
+    <br><br>
+    <button type="submit">Login</button>
 
-  <input type="text" name="nickname">
-  <br><br>
-  <input type="email" name="email">
-  <br><br>
-  <input type="password" name="password">
-  <br><br>
-  <button type="submit">Sing up</button>
+  </form>
 
-</form>
+  <a href="#" class="show-sign-up">Show me sign-up</a>
+</section>
+
+<section class="sign-up">
+  <h2>Sign up</h2>
+  <form action="/user" method="post">
+
+    <input type="text" name="nickname">
+    <br><br>
+    <input type="email" name="email">
+    <br><br>
+    <input type="password" ne="password">
+    <br><br>
+    <button type="submit">Signng up</button>
+
+  </form>
+
+  <a href="#" class="show-login">Show me login</a>
+</section>

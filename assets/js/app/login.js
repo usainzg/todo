@@ -2,8 +2,8 @@
 
 $(function(){
 
-  var $login  = $('section.login');
-  var $signUp = $('section.sign-up');
+  var $login  = $('article.login');
+  var $signUp = $('article.sign-up');
 
   $signUp.hide();
 

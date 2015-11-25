@@ -1,32 +1,39 @@
+<section class="row">
 
-<section class="login">
-  <h2>Login</h2>
-  <form action="/login" method="post">
+  <article class="login col s12">
+    <h2>Login</h2>
+    <form action="/login" method="post">
 
-    <input type="email" name="email">
-    <br><br>
-    <input type="password" name="password">
-    <br><br>
-    <button type="submit">Login</button>
+      <div class="input-field col s6">
+        <input placeholder="Add your email" id="login-email" type="email" class="validate" name="email">
+        <label for="login-email">Email</label>
+      </div>
+      <div class="input-field col s6">
+        <input placeholder="Add your email" id="login-password" type="password" class="validate" name="password">
+        <label for="login-password">Password</label>
+      </div>
+      <button type="submit">Login</button>
 
-  </form>
+    </form>
 
-  <a href="#" class="show-sign-up">Show me sign-up</a>
-</section>
+    <a href="#" class="show-sign-up">Show me sign-up</a>
+  </article>
 
-<section class="sign-up">
-  <h2>Sign up</h2>
-  <form action="/user" method="post">
+  <article class="sign-up col s12">
+    <h2>Sign up</h2>
+    <form action="/user" method="post">
 
-    <input type="text" name="nickname">
-    <br><br>
-    <input type="email" name="email">
-    <br><br>
-    <input type="password" ne="password">
-    <br><br>
-    <button type="submit">Signng up</button>
+      <input type="text" name="nickname">
+      <br><br>
+      <input type="email" name="email">
+      <br><br>
+      <input type="password" ne="password">
+      <br><br>
+      <button type="submit">Signng up</button>
 
-  </form>
+    </form>
 
-  <a href="#" class="show-login">Show me login</a>
+    <a href="#" class="show-login">Show me login</a>
+  </article>
+
 </section>

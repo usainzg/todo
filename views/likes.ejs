@@ -1,0 +1,7 @@
+<% _.each(likes, function(like){ %>
+
+  <p><a href="/user/<%= like.user.id %>"><%= like.user.nickname %></a></p>
+
+  <br>
+
+<% }) %>

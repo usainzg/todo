@@ -45,7 +45,12 @@ module.exports.routes = {
   /* USER */
   'POST /user': 'UserController.create',
   'POST /login': 'UserController.login',
-  'GET /logout': 'UserController.logout'
+  'GET /logout': 'UserController.logout',
+
+  /* LIKE */
+  'POST /like/:id': 'UserLikesController.create',
+  'POST /dislike/:id': 'UserLikesController.delete',
+  'GET /detail/:id/likes': 'UserLikesController.getLikes'
 
 
 

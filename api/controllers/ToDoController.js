@@ -34,9 +34,9 @@ module.exports = {
     });
 	},
 	findOne: function(req, res){
-		ToDo.findOne(req.param('id')).exec(function(err, todo){
+		ToDo.findOne(req.param('id')).populate('likes').exec(function(err, todo){
 			if(err) return res.serverError();
-			return res.view('details', {todo: todo});
+			return res.view('details', {todo: todo, me: req.session.user});
 		});
 	},
 	like: function(req, res){

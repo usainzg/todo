@@ -1,3 +1,25 @@
 <h1> ID task: <%= todo.id %> </h1>
 <h3>Title: <%= todo.title %></h3>
 <p> Task: <%= todo.description %></p>
+
+<p>Likes: <%= todo.likes.length %> - <a href="/detail/<%= todo.id %>/likes">See likes</a></p>
+
+<% var likedByMe = _.findWhere(todo.likes, {user: me.id}) %>
+
+<% if(likedByMe){ %>
+
+  <form action="/dislike/<%= todo.id %>" method="post">
+
+    <button type="submit">Dislike</button>
+
+  </form>
+
+<% }else{ %>
+
+  <form action="/like/<%= todo.id %>" method="post">
+
+    <button type="submit">Like</button>
+
+  </form>
+
+<% } %>

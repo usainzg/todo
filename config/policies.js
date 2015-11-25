@@ -44,9 +44,9 @@ module.exports.policies = {
 
   'UserLikesController':{
     '*': 'sessionAuth'
-    // 'create'  : ['sessionAuth', 'isPrivate'],
-    // 'delete'  : ['sessionAuth', 'isPrivate'],
-    // 'getLikes': ['sessionAuth', 'isPrivate']
+    'create'  : ['sessionAuth', 'isPrivate'],
+    'delete'  : ['sessionAuth', 'isPrivate'],
+    'getLikes': ['sessionAuth', 'isPrivate']
   }
 
 

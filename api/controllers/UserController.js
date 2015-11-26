@@ -15,7 +15,7 @@ module.exports = {
 	login: function(req, res){
 		User.login(req.param('email'), req.param('password'), function(err, user){
 			if(err) return res.serverError(err);
-			if(!user) return res.notFound();
+			if(!user) return res.redirect('/');
 			req.session.authenticated = true;
 			req.session.user = user.toJSON();
 			return res.redirect('/');

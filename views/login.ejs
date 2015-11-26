@@ -1,41 +1,61 @@
 <section class="row">
 
   <article class="login col offset-2 s12 container">
-    <h4>Login</h4>
+    <h2>Login</h2>
     <form action="/login" method="post">
 
       <div class="input-field col offset-s4 s8">
-        <input placeholder="Add your email" id="login-email" type="email" class="validate" name="email">
+        <input placeholder="Add your email" id="login-email" type="email" class="validate" name="email" required="required">
         <label for="login-email">Email</label>
       </div>
       <div class="input-field col offset-s4 s8">
-        <input placeholder="Add your password" id="login-password" type="password" class="validate" name="password">
+        <input placeholder="Add your password" id="login-password" type="password" class="validate" name="password" maxlength="20" required="required">
         <label for="login-password">Password</label>
       </div>
 
       <div class="input-field col offset-s4 s8">
         <button type="submit" class="waves-effect waves-light btn">Login</button>
         <br><br>
-        <a href="#" class="show-sign-up text lighten-2">Show me sign-up</a>
+        <a href="#" class="show-sign-up text lighten-2 waves-light btn">Show me sign-up</a>
       </div>
     </form>
   </article>
 
-  <article class="sign-up col s12">
+  <article class="sign-up col offset-2 s12 container">
     <h2>Sign up</h2>
     <form action="/user" method="post">
 
-      <input type="text" name="nickname">
+      <div class="input-field col offset-s4 s8">
+        <input placeholder="Add your nickname" id="login-nickname" type="text" class="validate" name="nickname" maxlength="20" required="required">
+        <label for="login-nickname">Nickname</label>
+      </div>
+
+      <div class="input-field col offset-s4 s8">
+        <input placeholder="Add your email" id="login-email" type="email" class="validate" name="email" required="required">
+        <label for="login-email">Email</label>
+      </div>
+
+      <div class="input-field col offset-s4 s8">
+        <input placeholder="Add your password" id="login-password" type="password" class="validate" name="password" maxlength="20" required="required">
+        <label for="login-password">Password</label>
+      </div>
+
+      <!-- <input placeholder="Add your nickname" id="login-nickname" class="validate" type="text" name="nickname">
       <br><br>
       <input type="email" name="email">
       <br><br>
       <input type="password" name="password">
-      <br><br>
-      <button type="submit">Signg up</button>
+      <br><br> -->
+      <!-- <button type="submit" class="waves-effect waves-light btn">Signg up</button> -->
+      <div class="input-field col offset-s4 s8">
+        <button type="submit" class="waves-effect waves-light btn">Sign up</button>
+        <br><br>
+        <a href="#" class="show-login lighten-2 waves-light btn">Show me login</a>
+      </div>
 
     </form>
 
-    <a href="#" class="show-login">Show me login</a>
+
   </article>
 
 </section>

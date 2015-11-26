@@ -1,33 +1,113 @@
+<section class="row"  >
 
-<a href="/logout">Logout</a>
+  <article class="col offset-5 s12 container">
+    <a href="/logout" class="text lighten-2 waves-light btn">Logout</a>
+    <br><br>
+    <form action="/todo" method="post">
 
-<form action="/todo" method="post">
+      <!-- <input placeholder="Add todo title" type="text" name="title"> -->
 
-  <input type="text" name="title">
-  <br><br>
-  <input type="text" name="description">
-  <br><br>
-  <input type="checkbox" name="private">Make it private
-  <br><br>
-  <button type="submit">Create</button>
+      <div class="input-field col offset-s4 s8">
+        <input placeholder="Add todo title" type="text" name="title" id="todo-title" required="required">
+        <label for="todo-title">Title</label>
+      </div>
 
-</form>
+      <!-- <input placeholder="Add todo description" id="todo-description" type="text" name="description"> -->
 
-<ul>
-  <% _.each(todos, function(todo){ %>
-    <li style="<% if(!todo.done){ %>color: red;<% } %>"><b><%= todo.title %></b> - <%= todo.description %> </li><small>Author: <%= todo.user.nickname %></small><a href="/detail/<%= todo.id %>">Detail</a>
-    <form action="/todo/completed/<%= todo.id %>" method="post">
-      <button type="submit">Completed</button>
+      <div class="input-field col offset-s4 s8">
+        <input placeholder="Add todo description" id="todo-description" type="text" name="description">
+        <label for="todo-description">Description</label>
+      </div>
+
+      <!-- <input type="checkbox" name="private">Make it private</input> -->
+
+      <div class="input-field col offset-s4 s8">
+        <input type="checkbox" name="private" id="todo-private">
+        <label for="todo-private">Make it private</label>
+      </div>
+
+      <!-- <button type="submit" class="waves-effect waves-teal btn-flat">Create</button> -->
+
+      <div class="input-field col offset-s6 s8">
+        <button type="submit" class="waves-effect waves-teal btn-flat">Create</button>
+      </div>
     </form>
-    <form action="/todo/update/<%= todo.id %>">
-      <input type="text" name="title" value="<%= todo.title %>">
-      <br><br>
-      <input type="text" name="description" value="<%= todo.description %>">
-      <br><br>
-      <button type="submit">Update</button>
-    </form>
-    <form action="/todo/delete/<%= todo.id %>" method="post">
-      <button type="submit">Delete</button>
-    </form>
-  <% }) %>
-</ul>
+  </article>
+  <br><br>
+
+  <article class="col offset-5 s12 container">
+    <h2>Todos: </h2>
+
+  <ul class="collapsible" data-collapsible="expandable">
+    <li>
+      <div class="collapsible-header"><i class="material-icons"></i>unai</div>
+      <div class="collapsible-body"><p>unais sain de la  aza vamboa sjda</p></div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons"></i>irati</div>
+      <div class="collapsible-body"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate consequatur quaerat odio voluptatum beatae soluta, hic numquam accusamus ullam voluptatem sequi omnis praesentium at culpa saepe mollitia earum illo deserunt?</p></div>
+    </li>
+  </ul>
+
+
+
+    <ul class="collapsible popout" data-collapsible="accordion">
+      <% _.each(todos, function(todo){ %>
+          <li>
+
+            <div class="collapsible-header"><i class="material-icons"></i><%= todo.title %></div>
+
+
+            <div class="colllapsible-body">
+              <p>
+                <%= todo.description %>
+              </p>
+              <p>
+                Author: <%= todo.user.nickname %>
+              </p>
+
+              <a href="/detail/<%= todo.id %>" class="waves-effect waves-light btn">Detail</a>
+              <form action="/todo/completed/<%= todo.id %>" method="post">
+                <button type="submit" class="waves-effect waves-light btn">Completed</button>
+              </form>
+              <form action="/todo/update/<%= todo.id %>">
+                <input type="text" name="title" value="<%= todo.title %>">
+                <br><br>
+                <input type="text" name="description" value="<%= todo.description %>">
+                <br><br>
+                <button type="submit" class="waves-effect waves-light btn">Update</button>
+              </form>
+              <form action="/todo/delete/<%= todo.id %>" method="post">
+                <button type="submit" class="waves-effect waves-light btn">Delete</button>
+              </form>
+
+            </div>
+
+
+
+
+
+          </li>
+
+          <!-- <a href="/detail/<%= todo.id %>">Detail</a>
+
+          <form action="/todo/completed/<%= todo.id %>" method="post">
+            <button type="submit">Completed</button>
+          </form>
+
+          <form action="/todo/update/<%= todo.id %>">
+            <input type="text" name="title" value="<%= todo.title %>">
+            <br><br>
+            <input type="text" name="description" value="<%= todo.description %>">
+            <br><br>
+            <button type="submit">Update</button>
+          </form>
+          <form action="/todo/delete/<%= todo.id %>" method="post">
+            <button type="submit">Delete</button>
+          </form> -->
+
+      <% }) %>
+    </ul>
+  </article>
+
+</section>

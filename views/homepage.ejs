@@ -38,19 +38,6 @@
   <article class="col offset-5 s12 container">
     <h2>Todos: </h2>
 
-  <ul class="collapsible" data-collapsible="expandable">
-    <li>
-      <div class="collapsible-header"><i class="material-icons"></i>unai</div>
-      <div class="collapsible-body"><p>unais sain de la  aza vamboa sjda</p></div>
-    </li>
-    <li>
-      <div class="collapsible-header"><i class="material-icons"></i>irati</div>
-      <div class="collapsible-body"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate consequatur quaerat odio voluptatum beatae soluta, hic numquam accusamus ullam voluptatem sequi omnis praesentium at culpa saepe mollitia earum illo deserunt?</p></div>
-    </li>
-  </ul>
-
-
-
     <ul class="collapsible popout" data-collapsible="accordion">
       <% _.each(todos, function(todo){ %>
           <li>
@@ -63,7 +50,7 @@
                 <%= todo.description %>
               </p>
               <p>
-                Author: <%= todo.user.nickname %>
+                Author: <a href="/user/<%= todo.user.id %>" class="waves-effect waves-light"><%= todo.user.nickname %></a>
               </p>
 
               <a href="/detail/<%= todo.id %>" class="waves-effect waves-light btn">Detail</a>

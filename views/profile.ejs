@@ -1,0 +1,51 @@
+<h1> <%= user.id %></h1>
+<h2> <%= user.nickname %></h2>
+
+<h3><%= likes %></h3>
+<!-- Numero de todos que ha hecho like -->
+
+<h3><a href="/user/<%= user.id %>/likes"><%= todoNum %></a></h3>
+<!-- Numero de todos que ha escrito -->
+
+<h3>
+  <ul class="collapsible popout" data-collapsible="accordion">
+    <% _.each(todos, function(todo){ %>
+        <li>
+
+          <div class="collapsible-header"><i class="material-icons"></i><%= todo.title %></div>
+
+
+          <div class="colllapsible-body">
+            <p>
+              <%= todo.description %>
+            </p>
+            <p>
+              Author: <%= user.nickname %>
+            </p>
+
+            <a href="/detail/<%= todo.id %>" class="waves-effect waves-light btn">Detail</a>
+            <form action="/todo/completed/<%= todo.id %>" method="post">
+              <button type="submit" class="waves-effect waves-light btn">Completed</button>
+            </form>
+            <form action="/todo/update/<%= todo.id %>">
+              <input type="text" name="title" value="<%= todo.title %>">
+              <br><br>
+              <input type="text" name="description" value="<%= todo.description %>">
+              <br><br>
+              <button type="submit" class="waves-effect waves-light btn">Update</button>
+            </form>
+            <form action="/todo/delete/<%= todo.id %>" method="post">
+              <button type="submit" class="waves-effect waves-light btn">Delete</button>
+            </form>
+
+          </div>
+
+        </li>
+
+    <% }) %>
+  </ul>
+</h3>
+<!-- Ver en detalle los todos -->
+
+<h3></h3>
+<!-- Ver en detalle los likes -->

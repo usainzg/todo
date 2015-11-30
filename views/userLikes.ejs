@@ -1,0 +1,9 @@
+<% _.each(userLikes, function(userLike){ %>
+
+  <p>Title: <%= userLike.todo.title %></p>
+  <p>Description: <%= userLike.todo.description %></p>
+  <small>Liker: <%= userLike.user.nickname %></small>
+
+  <br>
+
+<% }) %>

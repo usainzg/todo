@@ -38,7 +38,7 @@
   <article class="col offset-5 s12 container">
     <h2>Todos: </h2>
 
-    <ul class="collapsible popout" data-collapsible="accordion">
+    <ul id="todo-list" class="collapsible popout" data-collapsible="accordion">
       <% _.each(todos, function(todo){ %>
           <li>
 
@@ -95,6 +95,8 @@
 
       <% }) %>
     </ul>
+
+    <button id="load-todos" class="waves-effect waves-light btn">Load more todos</button>
   </article>
 
 </section>
